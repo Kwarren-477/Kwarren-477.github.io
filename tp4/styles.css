@@ -8,15 +8,13 @@
     width: var(--gameboardsize);
     height: var(var(--gameboardsize));
     background-color: antiquewhite;
-}
-
-.gamespace {  display: grid;
+    display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
-  gap: 10px 10px;
-  grid-auto-flow: row;
-  grid-template-areas:
-    ". . ."
-    ". . ."
-    ". . .";
+  gap: var(--gameboardspacer)
+}
+
+.gamespacer {
+    position:relative;
+    background-color: aqua;
 }
