@@ -1,21 +1,20 @@
-@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&family=Playwrite+NZ+Basic+Guides&display=swap');
 :root {
     --gameboardsize: 80vh;
-    --gameboardspacer: 15px;
+    --gameboardspace: 15px;
 }
 
-#gameboard {
+.gameboard {
     position: relative;
     width: var(--gameboardsize);
-    height: var(var(--gameboardsize));
+    height: var(--gameboardsize);
     background-color: black;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
-    gap: var(--gameboardspacer)
+    gap: var(--gameboardspace)
 }
 
-.gamespacer {
+.gamespace{
     position: relative;
     background-color: white;
     font-size: 10rem;
