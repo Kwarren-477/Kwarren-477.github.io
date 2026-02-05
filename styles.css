@@ -40,6 +40,7 @@ header
 
 section {
     background-color: azure;
+    display: flex;
     float: left;
     flex-direction: column;
     margin: 1rem;
@@ -56,6 +57,7 @@ section {
 #boringfact {
     width: 300;
     height: 300;
+    display: flex;
     flex-direction: column;
 }
 
