@@ -49,13 +49,14 @@ section {
     margin: 1rem;
     padding: 20px;
     box-shadow: 0px 5px 10px #333;
-    width: auto;
-    height: auto;
+    width: 300;
+    height: 300;
     flex-direction: column;
 }
 #boringfact {
-    width: auto;
-    height: auto;
+    width: 300;
+    height: 300;
+    flex-direction: column;
 }
 
 header h1 {
