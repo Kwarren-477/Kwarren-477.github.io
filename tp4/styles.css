@@ -1,6 +1,6 @@
 :root {
-    --gameboardsize: 80vh;
-    --gameboardspace: 15px;
+    --gameboardsize: 70vh;
+    --gameboardspace: 10px;
 }
 
 .gameboard {
@@ -11,7 +11,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
-    gap: var(--gameboardspace)
+    gap: var(--gameboardspace);
 }
 
 .gamespace{
