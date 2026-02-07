@@ -53,6 +53,7 @@ section {
     box-shadow: 0px 5px 10px #333;
     transition: transform 0.5s;
     width: 45vw;
+    overflow: hidden;
 }
 
 header h1 {
