@@ -34,7 +34,9 @@
   transition: transform 0.5s;
   backface-visibility: hidden;
 }
-
+.cardBottom{
+  transform: rotateX(180deg);
+}
 .cardExample:hover .cardContent {
   transform: rotateY(180deg);
   text-align: center;
