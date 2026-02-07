@@ -9,7 +9,7 @@ main {
     background-color: aliceblue;
 }
 
-#Predictions {
+.Predictions {
     width: 290px;
     height: 450px;
     position: absolute;
