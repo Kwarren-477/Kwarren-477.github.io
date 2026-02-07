@@ -37,4 +37,5 @@
 
 .cardExample:hover .cardContent {
   transform: rotateY(180deg);
+  text-align: center;
 }
