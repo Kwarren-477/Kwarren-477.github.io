@@ -16,6 +16,7 @@
 
 .cardTop {
   background-color: darkred;
+  position: absolute;
   color: black;
   width: 100%;
   height: 100%;
@@ -38,6 +39,6 @@
   transform: rotateX(180deg);
 }
 .cardExample:hover .cardContent {
-  transform: rotateY(180deg);
+  transform: rotatex(180deg);
   text-align: center;
 }
