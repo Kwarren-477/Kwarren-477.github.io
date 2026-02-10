@@ -10,10 +10,10 @@ main {
 }
 
 #PredictionBox{
-    width: 300px;
+    width: 100px;
     height: 100px;
     position: absolute;
-    bottom: 0px;
+    bottom: 5px;
     left: 5px;
     background-color: white;
 }
