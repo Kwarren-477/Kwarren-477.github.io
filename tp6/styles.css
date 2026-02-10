@@ -21,6 +21,6 @@ main {
 .Predictions{
     width: 200px;
     height: 100px;
-    border: 2px cornsilk;
+    border: 2px darkgrey;
     position: absolute;
 }
