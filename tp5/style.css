@@ -1,5 +1,9 @@
 /*styles for tp5*/
 
+*{
+  box-sizing: border-box;
+}
+
 *root {
   --cardsize: 200px;
 }
