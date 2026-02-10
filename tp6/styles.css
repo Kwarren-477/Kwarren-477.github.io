@@ -19,9 +19,9 @@ main {
 }
 
 .Predictions :nth-child(2){
-    bottom: 200px;
+    left: 200px;
 }
 
 .Predictions: :nth-child (3) {
-    :left: 400px;
+    left: 400px;
 }
