@@ -4,10 +4,18 @@
   box-sizing: border-box;
 }
 
-*root {
+:root {
   --cardsize: 200px;
 }
-/*positions/
+
+.card {
+  position: relative;
+  width: var(--cardsize);
+  height: var(--cardsize);
+}
+
+
+/* positions */
 .card {
   position: relative;
   width: var(--cardsize);
@@ -17,38 +25,15 @@
 
 }
 
-.cardPair1 {
-  width:200px;
-  height:200px;
-  position: relative;
-}
-.cardPair2 {
-  width:200px;
-  height:200px;
-  position: relative;
-}
-
-.cardPair3 {
-  width:200px;
-  height:200px;
-  position: relative;
-}
-
-.cardPair4 {
-  width:200px;
-  height:200px;
-  position: relative;
-}
-
 .cardContent {
   position: absolute;
   width: 100%;
   height: 100%;
   transition: transform 0.5s;
   transform-style: preserve-3d;
-
 }
-*/general card stuff/
+
+/* general card stuff */
 .cardTop {
   background-color: darkred;
   position: absolute;
@@ -58,8 +43,8 @@
   text-align: center;
   font-size: 5rem;
   border: 2px solid black;
-    border-radius: 10px;
-
+  border-radius: 10px;
+  backface-visibility: hidden;
 }
 
 .cardBottom {
@@ -75,13 +60,18 @@
   border: 2px solid black;
   border-radius: 10px;
 }
+
 .cardBottom{
   transform: rotateY(180deg);
 }
 
-.cardPair1:hover .cardContent {
+.card:hover .cardContent {
   transform: rotateY(180deg);
   text-align: center;
+}
+
+.card img {
+  width: 100%;
 }
 
 .cardPair1 .cardBottom {
@@ -91,25 +81,15 @@
 .cardPair2 .cardBottom {
   background-color: aquamarine;
 }
-.cardPair2:hover .cardContent {
-  transform: rotateY(180deg);
-  text-align: center;
-}
+
 
 .cardPair3 .cardBottom {
   background-color: green;
 }
-.cardPair3:hover .cardContent {
-  transform: rotateY(180deg);
-  text-align: center;
-}
+
 
 .cardPair4 .cardBottom {
   background-color: orchid
-}
-.cardPair4:hover .cardContent {
-  transform: rotateY(180deg);
-  text-align: center;
 }
 
 

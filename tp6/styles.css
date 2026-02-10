@@ -18,6 +18,14 @@ main {
     background-color: whitesmoke;
     overflow: auto;
     overflow-y: hidden;
+    
+}
+
+.Predictions {
+    position: absolute;
+    height: 100%;
+    width: 200px;
+    top: 0;
 }
 
 .Predictions:nth-child(2) {
