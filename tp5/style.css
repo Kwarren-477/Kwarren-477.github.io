@@ -37,9 +37,9 @@
   backface-visibility: hidden;
 }
 .cardBottom{
-  transform: rotateX(180deg);
+  transform: rotateY(180deg);
 }
 .cardExample:hover .cardContent {
-  transform: rotatex(180deg);
+  transform: rotateY(180deg);
   text-align: center;
 }
