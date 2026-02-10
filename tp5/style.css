@@ -62,16 +62,6 @@
 
 }
 
-#gameboard {
-  background-color: beige;
-  display: grid;
-  grid-template-columns: 1fr, 1fr, 1fr, 1fr;
-  grid-template-rows: 1fr, 1fr,;
-  gap: 1rem;
-}
-
-
-
 .cardBottom {
   position: absolute;
   background-color: blue;
@@ -88,7 +78,7 @@
 .cardBottom{
   transform: rotateY(180deg);
 }
-/* card pairs/
+
 .cardPair1:hover .cardContent {
   transform: rotateY(180deg);
   text-align: center;
@@ -124,3 +114,12 @@
 
 
 
+
+
+#gameboard {
+  background-color: beige;
+  display: grid;
+  grid-template-columns: 1fr,1fr,1fr,1fr;
+  grid-template-rows: 1fr,1fr,;
+  gap: 1rem;
+}
