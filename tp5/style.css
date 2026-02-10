@@ -13,10 +13,11 @@
   width: var(--cardsize);
   height: var(--cardsize);
   perspective: 500px;
+  margin-bottom: 1rem;
 
 }
 
-.cardExample {
+.cardPair1 {
   width:200px;
   height:200px;
   position: relative;
@@ -61,7 +62,11 @@
 .cardBottom{
   transform: rotateY(180deg);
 }
-.cardExample:hover .cardContent {
+.cardPair1:hover .cardContent {
   transform: rotateY(180deg);
   text-align: center;
+}
+
+.cardPair1 .cardBottom {
+  background-color: blue;
 }
