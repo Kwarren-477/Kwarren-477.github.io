@@ -18,3 +18,9 @@ main {
     background-color: whitesmoke;
 }
 
+.Predictions{
+    width: 200px;
+    height: 100px;
+    border: 2px cornsilk;
+    position: absolute;
+}
