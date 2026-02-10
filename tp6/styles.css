@@ -23,5 +23,5 @@ main {
 }
 
 .Predictions: :nth-child (3) {
-    bottom: 400px;
+    :left: 400px;
 }
