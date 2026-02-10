@@ -18,10 +18,10 @@ main {
     background-color: whitesmoke;
 }
 
-.Predictions:nth-child(2){
+.Predictions:nth-child(2) {
     left: 200px;
 }
 
-.Predictions:nth-child(3){
+.Predictions:nth-child(3) {
     left: 400px;
 }
