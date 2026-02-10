@@ -78,3 +78,6 @@
 .cardPair2 .cardBottom {
   background-color: aquamarine;
 }
+.cardPair2:hover .cardContent {
+  transform: rotateY(180deg);
+  text-align: center;
