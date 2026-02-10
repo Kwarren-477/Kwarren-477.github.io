@@ -27,6 +27,19 @@
   height:200px;
   position: relative;
 }
+
+.cardPair3 {
+  width:200px;
+  height:200px;
+  position: relative;
+}
+
+.cardPair4 {
+  width:200px;
+  height:200px;
+  position: relative;
+}
+
 .cardContent {
   position: absolute;
   width: 100%;
@@ -81,3 +94,23 @@
 .cardPair2:hover .cardContent {
   transform: rotateY(180deg);
   text-align: center;
+}
+
+.cardPair3 .cardBottom {
+  background-color: green;
+}
+.cardPair3:hover .cardContent {
+  transform: rotateY(180deg);
+  text-align: center;
+}
+
+.cardPair4 .cardBottom {
+  background-color: orchid
+}
+.cardPair4:hover .cardContent {
+  transform: rotateY(180deg);
+  text-align: center;
+}
+
+
+
