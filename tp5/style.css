@@ -22,7 +22,11 @@
   height:200px;
   position: relative;
 }
-
+.cardPair2 {
+  width:200px;
+  height:200px;
+  position: relative;
+}
 .cardContent {
   position: absolute;
   width: 100%;
