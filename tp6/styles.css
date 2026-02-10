@@ -9,7 +9,7 @@ main {
     background-color: aliceblue;
 }
 
-# #PredictionBox{
+.PredictionsBox{
     width: 100px;
     height: 100px;
     position: absolute;
