@@ -17,6 +17,7 @@ main {
     left: 5px;
     background-color: whitesmoke;
     overflow: auto;
+    overflow-y: hidden;
 }
 
 .Predictions:nth-child(2) {
