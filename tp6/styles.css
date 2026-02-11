@@ -18,7 +18,7 @@ main {
     background-color: whitesmoke;
     overflow: auto;
     display: grid; 
-  grid-template-columns: 1fr 1fr 1fr; 
+  grid-template-columns: 1fr 1fr; 
   grid-template-rows: 1fr 1fr; 
   gap: 3px 3px; 
   grid-auto-flow: row;
@@ -26,7 +26,6 @@ main {
 }
 
 .Predictions {
-    position: absolute;
     border: 2px solid black;
     height: 100%;
     width: 200px;
