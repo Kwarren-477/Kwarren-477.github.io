@@ -24,12 +24,10 @@ main {
     gap: 3px 3px;
     grid-auto-flow: row;
 }
-}
 
 .Predictions {
     position: absolute;
     height: 100%;
     width: 200px;
     top: 0;
-
 }
