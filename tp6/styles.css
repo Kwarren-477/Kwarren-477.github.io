@@ -1,44 +1,50 @@
+
+:root {
+    --predictionBoxWidth: 70vw;
+    --predictionBoxHeight: 20vh;
+
 * {
     box-sizing: border-box;
 }
 
+body {
+    padding: 0;
+    margin: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
 main {
     position: relative;
-    width: 300px;
-    height: 450px;
-    background-color: aliceblue;
+    width: 108vw;
+    height: 100vh;
+    background-color: azure;
+
+    display: grid;
+    grid-template-columns: 50vw 50vw;
+    grid-template-rows: 50vh 30vh var(--predictionBoxHeight)
+    grid-template-areas: 
+   'currentInfo    currentInfo'
+    'currentHum     currentWind'
+    'future         future';
 }
 
-#PredictionBox {
-    width: 290px;
-    height: 100px;
-    position: absolute;
-    bottom: 5px;
-    left: 5px;
-    background-color: whitesmoke;
-    overflow: auto;
-    display: grid; 
-  grid-template-columns: 1fr 1fr; 
-  grid-template-rows: 1fr 1fr; 
-  gap: 3px 3px; 
-  grid-auto-flow: row;
-  overflow-y: hidden;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
- 
-   
+#currentInfo {
+    grid-area:currentInfo;
+    background-color: blanchedalmond;
 }
 
- #Predictions::-webkit-scrollbar {
-    display: none;
- }
+#currentHumity {
+    grid-area: currentHum;
+    background-color: bisque;
+}
 
+#currentWind {
+    grid-area: currentWind;
+    background-color: beige;
 
-.Predictions {
-    border: 2px solid black;
-    height: 100%;
-    width: 200px;
-    top: 0;
-    align-content: space-evenly; 
-    user-select: none;
+}
+
+#futureInfo {
+    grid-row: future;
+    background-color: cornsilk;
 }
