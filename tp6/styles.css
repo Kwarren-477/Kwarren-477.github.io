@@ -20,7 +20,7 @@ main {
     background-color: azure;
     display: grid;
     grid-template-columns: 50vw 50vw;
-    grid-template-rows: 50vh 30vh 10vh var(--predictionBoxHeight);
+    grid-template-rows: 50vh 30vh var(--predictionBoxHeight);
     grid-template-areas: 
    'currentInfo    currentInfo'
     'currentHum     currentWind'
@@ -69,7 +69,7 @@ main {
 #futureInfo {
     position: relative;
     grid-area: future;
-    background-color: cornsilk;
+    background-color: azure;
     overflow: auto;
     overflow-y: hidden;
     scrollbar-width: none;
@@ -88,11 +88,13 @@ border-right: 1px solid gray;
 
 .futureDay:nth-child(2) {
     left: var(--predictionBoxWidth);
+    border-right: 1px solid gray;
 }
 
 .futureDay:nth-child(3) {
     left: calc( var(--predictionBoxWidth)*2);
-    border-right: none
+    border-right: 1px solid gray;
+
 }
 .futureDay:nth-child(4) {
     left: calc( var(--predictionBoxWidth)*3);
@@ -103,12 +105,12 @@ border-right: 1px solid gray;
 
     :root {
         --predictionBoxWidth: 30vw;
-        --predictionBoxHeight: calc( 100vh / 3 );
+        --predictionBoxHeight: calc( 100vh / 4 );
     }
 
     main {
         grid-template-columns: 60vw 40vw;
-        grid-template-rows: var(--predictionBoxHeight) var(--predictionBoxHeight) var(--predictionBoxHeight);
+        grid-template-rows: var(--predictionBoxHeight) var(--predictionBoxHeight) var(--predictionBoxHeight) var(--predictionBoxHeight);
         grid-template-areas:
             'currentInfo    currentHum'
             'currentInfo    currentWind'
@@ -120,3 +122,34 @@ border-right: 1px solid gray;
         border-bottom: none;
         border-right: 1px solid white;
     }
+}
+
+@media (max-width: 600px) {
+  .futureInfo {
+    flex-direction: column;
+  }
+}
+    .futureInfo {
+
+    display: flex;
+    
+    justify-content: flex-start; 
+    align-items: center; 
+
+    flex-direction: row; 
+    flex-wrap: nowrap; 
+    align-content: center;
+
+    background-color: #bbdefb;
+    height: 100%;
+    padding: 15px;
+    gap: 5px;
+
+  }
+
+  .futureDay > div{
+    background: azure;
+    border: 1px solid grey;
+    border-radius: 5px;
+    padding: 8px;
+  }		
