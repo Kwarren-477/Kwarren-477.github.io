@@ -4,7 +4,7 @@ let scrollLeftStart;
 let isMoving;
 
 document.addEventListener("DOMContentLoaded", function () {
-  scrollingBox = document.querySelector("#futureInfo"); /* get a handle on the parent container by tag or ID */
+  scrollingBox = document.querySelector("#futureInfo"); 
   isMoving = false;
 
   scrollingBox.addEventListener("mousedown", function (e) {
