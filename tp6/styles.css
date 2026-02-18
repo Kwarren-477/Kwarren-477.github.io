@@ -34,7 +34,12 @@ main {
     position: relative;
     grid-area:currentInfo;
     background-color: blanchedalmond;
+    background-image: url(/Images/sunny.jpg);
+    background-size: cover;
+    background-position: center center;
     border-bottom: 1px solid white;
+    color: black
+    font-size: 5rem;
 }
 
 
@@ -43,6 +48,7 @@ main {
     grid-area: currentTemp;
     font-size: 5rem;
     left: 1rem;
+    color: black;
 }
 
 #currentStatus {
@@ -52,19 +58,29 @@ main {
     left: 1rem;
 }
 
-#currentHumity {
+#currentHumidty {
     position: relative;
     grid-area: currentHum;
     background-color: bisque;
+    background-image: url(/Images/Humd.jpg);
+    background-size: cover;
+    background-position: center center;
     border-bottom: 1px solid white;
     border-right: 1px solid white;
+    font-size: 3rem;
+    color: black
+
 }
 
 #currentWind {
     position: relative;
     grid-area: currentWind;
     background-color: beige;
+    background-image: url(/Images/wind.jpg);
+    background-size: cover;
+    background-position: center center;
     border-bottom: 1px solid white;
+    font-size: 2rem;
 }
 
 #futureInfo {
@@ -79,6 +95,9 @@ main {
 
 #futureinfo::-webkit-scrollbar {
     display: none;}
+
+
+
 
 .futureDay {
 position:absolute;
@@ -115,8 +134,7 @@ border-right: 1px solid gray;
         grid-template-areas:
             'currentInfo    currentHum'
             'currentInfo    currentWind'
-            'currentInfo    future'
-            'future         future';
+            'future         future'
     }
 
     #currentInfo {
@@ -131,7 +149,7 @@ border-right: 1px solid gray;
     flex-direction: grid;
   }
 }
-    .futureInfo {
+    #futureInfo {
 
     display: flex;
     
@@ -150,6 +168,7 @@ border-right: 1px solid gray;
   }
 
   .futureDay > div{
+    height: calc(100% / 3);
     background: azure;
     border: 1px solid grey;
     border-radius: 5px;
