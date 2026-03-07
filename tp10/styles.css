@@ -1,0 +1,27 @@
+:root {
+    --gameboardsize: 70vh;
+    --gameboardspace: 10px;
+}
+
+.gameboard {
+    position: relative;
+    width: var(--gameboardsize);
+    height: var(--gameboardsize);
+    background-color: black;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: var(--gameboardspace);
+}
+
+.gamespace{
+    position: relative;
+    background-color:blanchedalmond;
+    font-size: 10rem;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Playwrite NZ Basic Guides", cursive;
+    overflow: hidden;
+}
