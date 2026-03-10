@@ -31,14 +31,16 @@ function compareSpaces(a, b, c,) {
 
       if (currentTurn == "x") currentTurn = "o";
       else currentTurn = "x";
-      
+
+      console.log("currentTurn: " + currentTurn);
+
       //update player dom//
       currentPlayer.innerHTML=currentTurn;
 
     }
 
   }
-/*code for the docmuent to finish loading before game can start*//
+/*code for the docmuent to finish loading before game can start*/
 document.addEventListener("DOMContentLoaded", function () {
 
   //*All clickable spaces*//
@@ -55,11 +57,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
   for (let eachSpace of allSpaces) {
     eachSpace.addEventListener("click", function () {
-      this.innerHTML = "x";
+      clickSquare();
     })
   }
 //current player Dom element//
-currentPlayer = document.querySelector("currentPlayer span");
+currentPlayer = document.querySelector("#currentPlayer span");
 currentPlayer.innerHTML=currentTurn;
 
 });
