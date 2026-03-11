@@ -9,6 +9,11 @@ let rowC = ["-", "-", "-"];
 
 let currentTurn = "x";
 
+
+//*track remaining turns*//
+let remainingTurns =9;
+
+
 //set up blank varibale for player//
 let currentPlayer;
 
@@ -18,28 +23,77 @@ function compareSpaces(a, b, c,) {
 }
 
 
-  //function handle click//
+//function handle click//
 
-  function clickSquare() {
+function clickSquare() {
 
-    //check space//
-    if (this.innerHTML == "") {
-      //set space
-      this.innerHTML = currentTurn;
+  //check space//
+  if (this.innerHTML == "") {
+    //set space
+    this.innerHTML = currentTurn;
 
-      //flip turns//
 
-      if (currentTurn == "x") currentTurn = "o";
-      else currentTurn = "x";
+    //subtracing turns from remaining clicks//
+    remainingTurns=remainingTurns-1;
+   console.log("Remaining Turns:" + remainingTurns);
 
-      console.log("currentTurn: " + currentTurn);
+    //*update array of rows to player event*//
 
-      //update player dom//
-      currentPlayer.innerHTML=currentTurn;
+    if (this.id == "a1") rowA[0] = currentTurn;
+    if (this.id == "a2") rowA[1] = currentTurn;
+    if (this.id == "a3") rowA[2] = currentTurn;
 
+    if (this.id == "b1") rowB[0] = currentTurn;
+    if (this.id == "b2") rowB[1] = currentTurn;
+    if (this.id == "b3") rowB[2] = currentTurn;
+
+    if (this.id == "c1") rowC[0] = currentTurn;
+    if (this.id == "c2") rowC[1] = currentTurn;
+    if (this.id == "c3") rowC[2] = currentTurn;
+
+    //output arrys to concil//
+
+    console.log("Rows:");
+    console.log(rowA);
+    console.log(rowB);
+    console.log(rowC);
+
+    // get a handle on the DOM element to be updated with the outcome
+    let gameOutputMsg = document.querySelector("#gameResult span");
+
+
+    // call your function checkGameboard() with the 3 rows
+    let winState =
+      checkGameboard(rowA, rowB, rowC);
+
+    // test the returned value of the function
+    if (winState == "x") {
+      gameOutputMsg.innerHTML = "X wins";
+
+    } else if (winState == "o") {
+      gameOutputMsg.innerHTML = "O wins";
+
+    } else if ( (winState == "d")&& (remainingTurns==0) ) {
+      gameOutputMsg.innerHTML = "draw";
+
+    } else {
+      gameOutputMsg.innerHTML = "unknown";
     }
 
+    //flip turns//
+
+    if (currentTurn == "x") currentTurn = "o";
+    else currentTurn = "x";
+
+
+    console.log("currentTurn: " + currentTurn);
+
+    //update player dom//
+    currentPlayer.innerHTML = currentTurn;
+
   }
+
+}
 /*code for the docmuent to finish loading before game can start*/
 document.addEventListener("DOMContentLoaded", function () {
 
@@ -60,9 +114,9 @@ document.addEventListener("DOMContentLoaded", function () {
       clickSquare();
     })
   }
-//current player Dom element//
-currentPlayer = document.querySelector("#currentPlayer span");
-currentPlayer.innerHTML=currentTurn;
+  //current player Dom element//
+  currentPlayer = document.querySelector("#currentPlayer span");
+  currentPlayer.innerHTML = currentTurn;
 
 });
 
@@ -175,25 +229,5 @@ function checkGameboard(checkA, checkB, checkC) {
 // **********************************************
 
 /*commet out non usable code
-// get a handle on the DOM element to be updated with the outcome
-let gameOutputMsg = document.querySelector("#gameResult span");
 
-
-// call your function checkGameboard() with the 3 rows
-let winState =
-  checkGameboard(rowA, rowB, rowC);
-
-// test the returned value of the function
-if (winState == "x") {
-  gameOutputMsg.innerHTML = "X wins";
-
-} else if (winState == "o") {
-  gameOutputMsg.innerHTML = "O wins";
-
-} else if (winState == "d") {
-  gameOutputMsg.innerHTML = "draw";
-
-} else {
-  gameOutputMsg.innerHTML = "unknown";
-}
 */
