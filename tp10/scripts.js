@@ -13,6 +13,9 @@ let currentTurn = "x";
 //*track remaining turns*//
 let remainingTurns =9;
 
+//*track game is over*//
+let gameOver=false;
+
 
 //set up blank varibale for player//
 let currentPlayer;
@@ -28,9 +31,10 @@ function compareSpaces(a, b, c,) {
 function clickSquare() {
 
   //check space//
-  if (this.innerHTML == "") {
+  if ( (this.innerHTML == "") && (!gameOver) ) {
     //set space
     this.innerHTML = currentTurn;
+    this.classList.add("clicked");
 
 
     //subtracing turns from remaining clicks//
@@ -59,7 +63,7 @@ function clickSquare() {
     console.log(rowC);
 
     // get a handle on the DOM element to be updated with the outcome
-    let gameOutputMsg = document.querySelector("#gameResult span");
+    let gameOutputMsg = document.querySelector("#gameResult");
 
 
     // call your function checkGameboard() with the 3 rows
@@ -69,14 +73,26 @@ function clickSquare() {
     // test the returned value of the function
     if (winState == "x") {
       gameOutputMsg.innerHTML = "X wins";
+      gameOver = true;
 
     } else if (winState == "o") {
       gameOutputMsg.innerHTML = "O wins";
+       gameOver = true;
 
-    } else if ( (winState == "d")&& (remainingTurns==0) ) {
+    } else if ( (winState == "d") && (remainingTurns==0) ) {
       gameOutputMsg.innerHTML = "draw";
+       gameOver = true;
 
-    } else {
+    }
+    
+    //reveal win and draw//
+    if (gameOver) {
+      console.log("gameOver: " + winState);
+      document.querySelector("#gameResult").style.display="block";
+    }
+
+
+    else {
       gameOutputMsg.innerHTML = "unknown";
     }
 
@@ -127,24 +143,21 @@ document.addEventListener("DOMContentLoaded", function () {
 function checkGameboard(checkA, checkB, checkC) {
   let resultValue = "d";
 
-  if (compareSpaces(checkA[0], checkB[0], checkC[0])) {
-
-  }
   //check for vertical rows path//
   // row 0 test//
   if (compareSpaces(checkA[0], checkB[0], checkC[0])) {
     if (checkA[0] == "x") resultValue = "x";
-    else if (checkA[0] = "o") resultValue = "o";
+    else if (checkA[0] == "o") resultValue = "o";
   }
   //row 1 test//
   if (compareSpaces(checkA[1], checkB[1], checkC[1])) {
     if (checkA[1] == "x") resultValue = "x";
-    else if (checkA[1] = "o") resultValue = "o";
+    else if (checkA[1] == "o") resultValue = "o";
   }
   //row 2 test//
   if (compareSpaces(checkA[2], checkB[2], checkC[2])) {
     if (checkA[2] == "x") resultValue = "x";
-    else if (checkA[2] = "o") resultValue = "o";
+    else if (checkA[2] == "o") resultValue = "o";
   }
 
 
@@ -156,69 +169,36 @@ function checkGameboard(checkA, checkB, checkC) {
     return ((a == b) && (b == c));
   }
 
-
-
-  if (compareSpaces(checkA[0], checkA[1], checkA[2])) {
-
-  }
-
   if (compareSpaces(checkA[0], checkA[1], checkA[2])) {
     if (checkA[0] == "x") resultValue = "x";
-    else if (checkA[0] = "o") resultValue = "o";
+    else if (checkA[0] == "o") resultValue = "o";
   }
-
-
 
   //row B test//
-
-
-
-  if (compareSpaces(checkB[0], checkB[1], checkB[2])) {
-
-  }
-
   if (compareSpaces(checkB[0], checkB[1], checkB[2])) {
     if (checkB[0] == "x") resultValue = "x";
-    else if (checkB[0] = "o") resultValue = "o";
+    else if (checkB[0] == "o") resultValue = "o";
   }
-
-
 
   //row C test//
-
-
-
-  if (compareSpaces(checkC[0], checkC[1], checkC[2])) {
-
-  }
-
   if (compareSpaces(checkC[0], checkC[1], checkC[2])) {
     if (checkC[0] == "x") resultValue = "x";
-    else if (checkC[0] = "o") resultValue = "o";
+    else if (checkC[0] == "o") resultValue = "o";
   }
 
 
   //check for digional rows//
 
   // combo A0,B1,C2//
-
-  if (compareSpaces(checkA[0], checkB[1], checkC[2])) {
-
-  }
-
   if (compareSpaces(checkA[0], checkB[1], checkC[2])) {
     if (checkA[0] == "x") resultValue = "x";
-    else if (checkA[0] = "o") resultValue = "o";
+    else if (checkA[0] == "o") resultValue = "o";
   }
 
   //combo C0,B1,A2//  
   if (compareSpaces(checkC[0], checkB[1], checkA[2])) {
-
-  }
-
-  if (compareSpaces(checkC[0], checkB[1], checkA[2])) {
     if (checkC[0] == "x") resultValue = "x";
-    else if (checkC[0] = "o") resultValue = "o";
+    else if (checkC[0] == "o") resultValue = "o";
   }
 
   return resultValue;

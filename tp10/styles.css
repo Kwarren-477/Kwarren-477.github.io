@@ -25,3 +25,25 @@
     font-family: "Playwrite NZ Basic Guides", cursive;
     overflow: hidden;
 }
+
+.gamespace:hover {
+    background-color:whitesmoke;
+}
+
+.gamespace:click.hover {
+background-color: white;
+}
+
+
+#gameResult {
+    position:absolute;
+    top:0;
+    left:0;
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    background-color: blueviolet;
+    font-size: 5rem;
+    text-align: center;
+    z-index: 1;
+}
