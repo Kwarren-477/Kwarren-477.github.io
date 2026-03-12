@@ -1,0 +1,124 @@
+/*styles for tp11*/
+
+*{
+  box-sizing: border-box;
+}
+
+:root {
+  --cardsize: 40vw;
+}
+
+.card {
+  position: relative;
+  width: var(--cardsize);
+  height: var(--cardsize);
+}
+
+
+/* positions */
+.card {
+  position: relative;
+  width: var(--cardsize);
+  height: var(--cardsize);
+  perspective: 500px;
+  margin-bottom: 1rem;
+  
+
+}
+
+.cardContent {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.5s;
+  transform-style: preserve-3d;
+}
+
+/* general card stuff */
+.cardTop {
+  background-color: darkred;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: 2px solid black;
+  border-radius: 10px;
+  backface-visibility: hidden;
+  
+}
+
+.cardBottom {
+  position: absolute;
+  background-color: blue;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.5s;
+  backface-visibility: hidden;
+  border: 2px solid black;
+  border-radius: 10px;
+}
+
+.cardBottom{
+  transform: rotateY(180deg);
+}
+
+.card:hover .cardContent {
+  transform: rotateY(180deg);
+  text-align: center;
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  border: 2px solid black;
+}
+
+.cardPair1 .cardBottom {
+  background-color: #e5e5f7;
+
+}
+
+.cardPair2 .cardBottom {
+  background-color: lightpink;
+}
+
+
+.cardPair3 .cardBottom {
+  background-color: white;
+}
+
+
+.cardPair4 .cardBottom {
+  background-color: lightgrey
+}
+
+
+
+
+
+#gameboard {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr ;
+  gap: 1rem;
+  width: 100vw;
+  opacity: 0.8;
+background: radial-gradient(circle, transparent 20%, #e5e5f7 20%, #e5e5f7 80%, transparent 80%, transparent), radial-gradient(circle, transparent 20%, #e5e5f7 20%, #e5e5f7 80%, transparent 80%, transparent) 25px 25px, linear-gradient(#444cf7 2px, transparent 2px) 0 -1px, linear-gradient(90deg, #444cf7 2px, #e5e5f7 2px) -1px 0;
+background-size: 50px 50px, 50px 50px, 25px 25px, 25px 25px;
+}
+
+@media screen and (orientation: landscape) {
+  :root {
+    --cardsize: 20vw;
+  .card {
+  width: 200px;
+  height: 300px;
+  margin-bottom: 25px;
+}
+
+
+#gameboard {
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}
