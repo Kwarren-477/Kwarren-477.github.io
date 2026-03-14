@@ -61,7 +61,7 @@
   transform: rotateY(180deg);
 }
 
-.card:hover .cardContent {
+.card.clicked .cardContent {
   transform: rotateY(180deg);
   text-align: center;
 }
@@ -69,7 +69,7 @@
 .card img {
   width: 100%;
   height: 100%;
-  object-fit: fill;
+  object-fit: cover;
   border: 2px solid black;
 }
 
