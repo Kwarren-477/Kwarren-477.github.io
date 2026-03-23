@@ -57,6 +57,10 @@
   border-radius: 10px;
 }
 
+.matched {
+  opacity: 0;
+}
+
 .cardBottom{
   transform: rotateY(180deg);
 }

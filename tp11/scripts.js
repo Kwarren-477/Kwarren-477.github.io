@@ -15,13 +15,41 @@ function flipCard() {
 
     }
 
-        //get a fresh list of click cards//
-        allClickedCards = document.querySelectorAll(".clicked");
+    //get a fresh list of click cards//
+    allClickedCards = document.querySelectorAll(".clicked");
 
-        //if it's a pair compare them//
-        if (allClickedCards.length == 2) {
-            
+    //if it's a pair compare them//
+    if (allClickedCards.length == 2) {
+
+        // get the class of each card as a string//
+        let card1 = allClickedCards[0].classList.toString();
+        let card2 = allClickedCards[1].classList.toString();
+        let card3 = allClickedCards[2].classList.toString();
+        let card4 = allClickedCards[3].classList.toString();
+        let card5 = allClickedCards[4].classList.toString();
+        let card6 = allClickedCards[5].classList.toString();
+        let card7 = allClickedCards[6].classList.toString();
+        let card8 = allClickedCards[7].classList.toString();
+        let card9 = allClickedCards[8].classList.toString();
+        let card10 = allClickedCards[9].classList.toString();
+        let card11 = allClickedCards[10].classList.toString();
+        let card12 = allClickedCards[11].classList.toString();
+        let card13 = allClickedCards[12].classList.toString();
+        let card14 = allClickedCards[13].classList.toString();
+        let card15 = allClickedCards[14].classList.toString();
+        let card16 = allClickedCards[15].classList.toString();
+      
+        // if the class match--it's a pair//
+        if (card1 == card2) {
+            console.log("it's a match!");
+            allClickedCards[0].classList.add("matched");
+            allClickedCards[1].classList.add("matched");
+            allClickedCards[0].classList.remove("clicked");
+            allClickedCards[1].classList.remove("clicked");
+        } else {
+            console.log("not a match!");
         }
+    }
 
 }
 
