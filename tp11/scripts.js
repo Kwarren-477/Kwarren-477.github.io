@@ -15,7 +15,7 @@ let timeDelay = 1000;// 2 seconds
 
 //increase player count by 1//
         playerclicks++;
-        document.querySelector["#turnCount span"].innerHTML = playerclicks;
+        document.querySelector("#turnCount span").innerHTML = playerclicks;
 
 //check for winning 
 let allCards = document.querySelectorAll(".card");
@@ -61,8 +61,8 @@ function flipCard() {
         // if the class match--it's a pair//
         if (card1 == card2) {
             console.log("it's a match!");
-            allClickedCards[0].classList.add(".matched");
-            allClickedCards[1].classList.add(".matched");
+            allClickedCards[0].classList.add("matched");
+            allClickedCards[1].classList.add("matched");
            window.setTimeout(clearClicks, timeDelay);
 
         } else {
