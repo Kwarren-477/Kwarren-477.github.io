@@ -50,6 +50,19 @@ function updateWeather(weatherObject) {
 }
 
 
+let ipLookupURL = "https://api.ipify.org/?format=json";
+let ipLookupOptions = {};
+
+getData(ipLookupURL, ipLookupOptions).then(function(result){
+    console.log(results);
+});
+
+
+
+
+
+
+
 ///Hardware for DOM loading//
 document.addEventListener("DOMContentLoaded", function () {
     scrollingBox = document.querySelector("#futureInfo");
