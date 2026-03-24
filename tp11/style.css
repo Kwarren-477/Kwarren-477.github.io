@@ -6,6 +6,7 @@
 
 :root {
   --cardsize: 40vw;
+  --timeDelay: 1s;
 }
 
 .card {
@@ -22,6 +23,7 @@
   height: var(--cardsize);
   perspective: 500px;
   margin-bottom: 1rem;
+  transition: opacity 1s;
   
 
 }
@@ -59,6 +61,7 @@
 
 .matched {
   opacity: 0;
+  transition-delay: var(--timeDelay);
 }
 
 .cardBottom{
