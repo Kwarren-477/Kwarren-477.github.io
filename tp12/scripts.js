@@ -23,8 +23,31 @@ async function getData(url, options) {
     }
 }
 
+//update weather in DOM settings
+function updateWeather(weatherObject) {
+    console.log(weatherObject);
 
+    //Outputting to whole weather consol//
+    document.querySelector("#currentTemp span").innerHTML = weatherObject.current.temp_f;
+    document.querySelector("#currentStatus").innerHTML = weatherObject.current.condition.text;
+    document.querySelector("#currentHumidity span").innerHTML = weatherObject.current.humidity;
 
+    //Output windspeed and direction plus future day with loops//
+    let windspeed = weatherObject.current.wind_mph;
+    let winddirection = weatherObject.current.wind_dir;
+    document.querySelector("#currentWind").innerHTML = windspeed + "mph" + winddirection;
+//update future temp//
+    let futureDays = document.querySelectorAll(".futureDay");
+    for (i = 0; i < futureDays.length; i++) {
+        futureDays[i].querySelector(".futureTemp").innerHTML = weatherObject.forecast.forecastday[i].day.maxtemp_f;
+    }
+//update windspeed//
+    windspeed = weatherObject.forecast.forecastday[i].day.maxwind_mph;
+    futureDays[i].querySelector(".futureWind").innerHTML = windspeed + "mph";
+    //update futurestatus//
+    futureDays[i].querySelector(".futureStatus").innerHTML = weatherObject.forecast.forecastday[i].day.condition.text;
+
+}
 
 
 ///Hardware for DOM loading//
@@ -52,15 +75,15 @@ document.addEventListener("DOMContentLoaded", function () {
         scrollingBox.scrollLeft = scrollLeftStart - (e.pageX - offsetLeftStart - scrollingBox.offsetLeft);
     });
 
-let sampleUrl = "https://tordevries.github.io/477/examples/ajax-api-test/current.js";
-let sampleOptions={};
+    let sampleUrl = "https://tordevries.github.io/477/examples/ajax-api-test/current-forecast.js";
+    let sampleOptions = {};
 
 
-// Get Sample Data//
-getData(sampleUrl, sampleOptions).then( function (result) {
-// code to operate on “result” JSON object
-console.log(result.);
-});
+    // Get Sample Data//
+    getData(sampleUrl, sampleOptions).then(function (result) {
+        // code to operate on “result” JSON object
+        updateWeather(result);
+    });
 
 
 
