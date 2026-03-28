@@ -1,6 +1,18 @@
 
 //weather page functions
 
+//weather api variables//
+
+const weatherurl = 'https://weatherapi-com.p.rapidapi.com/forecast.json?days=4&q=';
+const weathetoptions = {
+	method: 'GET',
+	headers: {
+		'x-rapidapi-key': 'be6a03c956mshaee959d6d0ade22p1fb573jsna6b7c2d29696',
+		'x-rapidapi-host': 'weatherapi-com.p.rapidapi.com',
+		'Content-Type': 'application/json'
+	}
+};
+
 let scrollingBox;
 let offsetLeftStart;
 let scrollLeftStart;
@@ -49,12 +61,23 @@ function updateWeather(weatherObject) {
 
 }
 
-
+//ip lookup code// 
 let ipLookupURL = "https://api.ipify.org/?format=json";
 let ipLookupOptions = {};
 
+//use Ajax for data collection//
 getData(ipLookupURL, ipLookupOptions).then(function(result){
-    console.log(results);
+
+    //adding proper ip number to weather URL//
+
+     let weatherLookupURL = weatherurl + result.ip;
+     console.log(weatherLookupURL);
+
+    //use resulting ip number to look up data//
+    getData(weatherLookupURL, weathetoptions).then(function(weatherResult){
+        console.log(weatherResult);
+        updateWeather(weatherResult);
+
 });
 
 
@@ -88,14 +111,8 @@ document.addEventListener("DOMContentLoaded", function () {
         scrollingBox.scrollLeft = scrollLeftStart - (e.pageX - offsetLeftStart - scrollingBox.offsetLeft);
     });
 
-    let sampleUrl = "https://tordevries.github.io/477/examples/ajax-api-test/current-forecast.js";
-    let sampleOptions = {};
+    
 
-
-    // Get Sample Data//
-    getData(sampleUrl, sampleOptions).then(function (result) {
-        // code to operate on “result” JSON object
-        updateWeather(result);
     });
 
 
