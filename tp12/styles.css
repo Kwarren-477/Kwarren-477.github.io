@@ -58,7 +58,7 @@ main {
     left: 1rem;
 }
 
-#currentHumidty {
+#currentHumidity {
     position: relative;
     grid-area: currentHum;
     background-color: bisque;

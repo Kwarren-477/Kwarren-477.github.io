@@ -3,7 +3,7 @@
 
 //weather api variables//
 
-const weatherurl = 'https://weatherapi-com.p.rapidapi.com/forecast.json?days=4&q=';
+const weatherurl = 'https://weatherapi-com.p.rapidapi.com/forecast.json?days=3&q=';
 const weathetoptions = {
 	method: 'GET',
 	headers: {
@@ -47,18 +47,19 @@ function updateWeather(weatherObject) {
     //Output windspeed and direction plus future day with loops//
     let windspeed = weatherObject.current.wind_mph;
     let winddirection = weatherObject.current.wind_dir;
-    document.querySelector("#currentWind").innerHTML = windspeed + "mph" + winddirection;
+    document.querySelector("#currentWind").innerHTML = windspeed + "mph " + winddirection;
 //update future temp//
     let futureDays = document.querySelectorAll(".futureDay");
+   
     for (i = 0; i < futureDays.length; i++) {
-        futureDays[i].querySelector(".futureTemp").innerHTML = weatherObject.forecast.forecastday[i].day.maxtemp_f;
+        futureDays[i].querySelector(".futureTemp span").innerHTML = weatherObject.forecast.forecastday[i].day.maxtemp_f;
+   
+        //update windspeed//
+        windspeed = weatherObject.forecast.forecastday[i].day.maxwind_mph;
+        futureDays[i].querySelector(".futureWind").innerHTML = windspeed + "mph";
+        //update futurestatus//
+        futureDays[i].querySelector(".futureStatus").innerHTML = weatherObject.forecast.forecastday[i].day.condition.text;
     }
-//update windspeed//
-    windspeed = weatherObject.forecast.forecastday[i].day.maxwind_mph;
-    futureDays[i].querySelector(".futureWind").innerHTML = windspeed + "mph";
-    //update futurestatus//
-    futureDays[i].querySelector(".futureStatus").innerHTML = weatherObject.forecast.forecastday[i].day.condition.text;
-
 }
 
 //ip lookup code// 
