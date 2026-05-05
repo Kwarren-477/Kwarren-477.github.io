@@ -1,8 +1,8 @@
 /*styles for repository homepage from TP2*/
  
 a:hover {
-  background-color: rgb(255, 255, 136);
-  font-size: 18px;
+  background-color:whitesmoke;
+  font-size: 20px;
 }
 
 * {
@@ -60,6 +60,13 @@ section {
     transition: transform 0.5s;
     width: 45vw;
     overflow: hidden;
+}
+
+#majorProject {
+    text-align: center;
+    flex-flow: row;
+    align-items: center;
+    font-size: 30px;
 }
 
 header h1 {
