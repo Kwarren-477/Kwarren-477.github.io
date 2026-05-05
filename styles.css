@@ -18,7 +18,7 @@ section:hover {
 *{
     box-sizing: border-box;
 }
-
+/*headings style*/
 h1,
 h2 {
     text-transform: capitalize;
@@ -37,6 +37,7 @@ h2 {
 a {
     font-size: 20px;
 }
+/* text style for both header and section*/
 header
  {
     background-color: burlywood;
@@ -64,6 +65,12 @@ section {
     overflow: hidden;
 }
 
+
+header h1 {
+    display: flex-grow; 1;
+    text-align: center;
+}
+/*majorProject style*/
 #majorProject {
     text-align: center;
     flex-flow: row;
@@ -71,11 +78,7 @@ section {
     font-size: 20px;
 }
 
-header h1 {
-    display: flex-grow; 1;
-    text-align: center;
-}
-
+/*image styles*/
 #coolPic img {
     width: 100%;
     height: auto;
@@ -84,5 +87,5 @@ header h1 {
 
 body {
  background: url("Binarybackground.png") no-repeat scroll 0 0;
-background-size: cover;   
+ background-size: cover;   
 }
